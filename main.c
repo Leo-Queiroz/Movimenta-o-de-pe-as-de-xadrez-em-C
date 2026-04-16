@@ -1,44 +1,56 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(){
-    /*int torre = 0;
-    int bispo = 0;
-    int rainha= 0;
-    //movimentando a torre
-    for(torre ; torre < 5 ; torre++){
-        printf("torre\n");
-        printf("direita\n");
+
+    //loops recursivos que movimenta as peças
+    void movimentoTorre(int movimento){
+        if(movimento > 0){
+            printf("torre\n");
+            printf("direita\n");
+            movimentoTorre(movimento - 1);
+        }
     }
+        void movimentoBispo(int movimento){
+        if(movimento > 0){
+            printf("Bispo\n");
+            printf("cima,direita\n");
+            movimentoBispo(movimento - 1);
+        }
+    }
+    void movimentoRainha(int movimento){
+        if(movimento > 0){
+            printf("Rainha\n");
+            printf("Esquerda\n");
+            movimentoRainha(movimento - 1);
+        }
+    }
+
+
+int main(){
+    //Váriaveis
+    int torre = 5;
+    int bispo = 5;
+    int rainha= 8;
+    //movimentando a torre
+    movimentoTorre(torre);
+
     printf("\n");
     //movimentando o bispo
-
-    while(bispo < 5){
-        bispo++;
-        printf("bispo\n");
-        printf("cima,direita\n");
-
-    }
+    movimentoBispo(bispo);
         printf("\n");
     //movimentando a Rainha
-    do{
-        rainha++;
-        printf("rainha\n");
-        printf("esquerda\n");
-    }while(rainha < 8);
-       return 0;
-*/
+    movimentoRainha(rainha);
        //movimentando o cavalo
        printf("\n");//identando uma linha vazia
-       int movimentacaoCavalo = 0;//valor inicial do cavalo
+       int movimentacaoCavalo = 1;//valor inicial do cavalo
 
        while(movimentacaoCavalo--){
-            for(int i = 0; i<2;i++){
-            printf("baixo\n");//imprime "Baixo 2 vezes"
+            for(int i = 0; i < 2;i++){
+            printf("cima\n");//imprime "Baixo 2 vezes"
             }
-            printf("esquerda\n");
+            printf("direita\n");
        }
 
-
+    return 0;
 }
 
