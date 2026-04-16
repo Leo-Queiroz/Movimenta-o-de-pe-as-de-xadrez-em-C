@@ -2,7 +2,6 @@
 #include <stdlib.h>
 
 
-    //loops recursivos que movimenta as peças
     void movimentoTorre(int movimento){
         if(movimento > 0){
             printf("torre\n");
@@ -11,12 +10,18 @@
         }
     }
         void movimentoBispo(int movimento){
-        if(movimento > 0){
-            printf("Bispo\n");
-            printf("cima,direita\n");
-            movimentoBispo(movimento - 1);
+            if(movimento > 0){
+                printf("Bispo\n");
+                for (int i = 0 ; i < 1; i++){
+                for(int j = 0 ; j < 1; j++ ){
+                    printf("direita\n");
+                    printf("cima\n");
+                }
+                movimentoBispo(movimento - 1);
+            }
+           }
         }
-    }
+
     void movimentoRainha(int movimento){
         if(movimento > 0){
             printf("Rainha\n");
@@ -46,11 +51,10 @@ int main(){
 
        while(movimentacaoCavalo--){
             for(int i = 0; i < 2;i++){
-            printf("cima\n");//imprime "Baixo 2 vezes"
+            printf("cima\n");//imprime "Cima 2 vezes"
             }
             printf("direita\n");
        }
 
     return 0;
 }
-
